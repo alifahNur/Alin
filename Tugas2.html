@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="next" title="&lt;no title&gt;" href="tugas3.html" />
     <link rel="prev" title="&lt;no title&gt;" href="sistem_linier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,9 +176,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aljabar Matrix</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
@@ -396,9 +398,34 @@ document.write(`
 <h1>Tidak mengerjakan keluar kelas<a class="headerlink" href="#tidak-mengerjakan-keluar-kelas" title="Link to this heading">#</a></h1>
 <ul>
 <li><p>Berikan penjelasan tentang apa itu matrix</p>
-<p><em>matriks adalah kumpulan bilangan atau elemen yang disusun dalam bentuk baris dan kolom. Setiap elemen dalam matriks diidentifikasi oleh baris dan kolomnya.</em></p>
+<p><em>matriks adalah kumpulan bilangan atau elemen yang disusun dalam bentuk baris dan kolom. Setiap elemen dalam matriks diidentifikasi oleh baris dan kolomnya.
+matriks digunakan untuk merepresentasikan data, sistem linear, transformasi linear, dan berbagai konsep matematika lainnya.</em></p>
 </li>
-<li><p>Operasi Matrix, penjumlahan, pengurangan, transpose matriks</p></li>
+<li><p>jenis jenis matriks</p>
+<ol class="arabic simple">
+<li><p>matriks nol : matriks yang seluruh elemennya adalah bilangan nol.</p></li>
+<li><p>matriks baris : matriks yang hanya memiliki satu baris.</p></li>
+<li><p>matriks kolom : matriks yang hanya memiliki satu kolom.</p></li>
+<li><p>matriks persegi : matriks yang banyaknya baris sama dengan banyaknya kolom.</p></li>
+<li><p>matriks diagonal : matriks persegi yang semua elemennya nol, kecuali pada diagonal utamanya.</p></li>
+<li><p>matriks segitiga atas, matriks persegi yang semua elemen di bawah diagonal utamanya adalah nol.</p></li>
+<li><p>matriks segitiga bawah : matriks persegi yang semua elemen di atas diagonal utamanya adalah nol.</p></li>
+<li><p>matriks identitas : matriks persegi yang elemen pada diagonal utamanya adalah satu, sedangkan elemen lainnya adalah nol.</p></li>
+</ol>
+</li>
+<li><p>Operasi Matrix
+Operasi matriks dapat dilakukan hanya jika memenuhi syarat dan ketentuannya. Operasi matriks sendiri meliputi : penjumlahan dan pengurangan dua matriks, perkalian matriks dengan bilangan skalar, perkalian dua matriks, dan transpose matriks.</p></li>
+<li><p>penjumlahan dan pengurangan
+syarat : jika terdapat dua matriks, misal matriks j dan k, yang memiliki ordo sama, maka elemen yang seletak bisa dijumlahkan dan dikurangkan.</p></li>
+<li><p>Perkalian skalar
+pada operasi perkalian skalar, jika diketahui J merupakan suatu matriks dan K merupakan bilangan real, maka hasil perkalian K dengan matriks J adalah matriks yang diperoleh dengan mengalikan setiap elemen J dengan K.</p></li>
+<li><p>Perkalian dua matriks
+syarat perkalian dua matriks yaitu, kedua matriks memiliki jumlah kolom yang sama antara matriks A dengan Matriks B. untuk mencari hasil kali kedua matriks yitu dengan mengalikan elemen pada baris matriks A dengan elemen pada kolom matriks B, kemudian hasil perkalian antara baris dan kolom tersebut dijumlahkan.</p></li>
+<li><p>transpose matriks
+Transpose dari sebuah matriks adalah operasi untuk memindahkan elemen-elemen matriks ke posisi yang berlawanan secara diagonal. Artinya, jika sebuah matriks memiliki dimensi ( m \times n ), maka matriks transposenya akan memiliki dimensi ( n \times m ), dengan baris-baris dari matriks asli menjadi kolom-kolom dari matriks transposenya dan sebaliknya.</p>
+<p>Misalkan ( A ) adalah sebuah matriks dengan elemen ( a_{ij} ), di mana ( i ) menunjukkan indeks baris dan ( j ) menunjukkan indeks kolom. Transpose dari matriks ( A ), ditandai dengan ( A^T ), memiliki elemen yang sama, tetapi ditukar antara baris dan kolom, sehingga jika ( A^T ) adalah transpose dari ( A ), maka:</p>
+<p>[ (A^T)<em>{ij} = a</em>{ji} ]</p>
+</li>
 <li><p>buat program untuk mengalikan matriks a dan b tanpa menggunakan &#64;</p></li>
 </ul>
 <div class="cell docutils container">
@@ -780,11 +807,11 @@ Matriks C Trans
       </div>
     </a>
     <a class="right-next"
-       href="markdown-notebooks.html"
+       href="tugas3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
