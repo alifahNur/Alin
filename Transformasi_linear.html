@@ -1,0 +1,1646 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Rotasi &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Transformasi_linear';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Matriks Determinan" href="DeterminanMatrix.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My sample book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Aljabar Matrix</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="DeterminanMatrix.html">Matriks Determinan</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Rotasi</a></li>
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTransformasi_linear.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Transformasi_linear.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Rotasi</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Rotasi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penskalaan">2. Penskalaan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#translasi">3. Translasi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi">4. Refleksi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-rotasi-pada-matriks-transformasi">Konsep Rotasi pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-rotasi">Matriks Rotasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-elemen-matriks">Penjelasan Elemen Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-rotasi">Cara Kerja Rotasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan">Contoh Penerapan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-langkah-langkah-kode">Penjelasan Langkah-langkah Kode</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-penskalaan-pada-matriks-transformasi">Konsep Penskalaan pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-penskalaan">Matriks Penskalaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Penjelasan Elemen Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-penskalaan">Cara Kerja Penskalaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contoh Penerapan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Penjelasan Langkah-langkah Kode</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-translasi-pada-matriks-transformasi">Konsep Translasi pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-translasi">Matriks Translasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-translasi">Cara Kerja Translasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Contoh Penerapan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-reflection-refleksi-pada-matriks-transformasi">Konsep Reflection (Refleksi) pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-refleksi-dalam-dua-dimensi">Matriks Refleksi dalam Dua Dimensi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-refleksi">Cara Kerja Refleksi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Contoh Penerapan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Penjelasan Langkah-langkah Kode</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>#jenis jenis matrix tranformasi</p>
+<p>Tentu! Mari jelaskan beberapa jenis matriks transformasi yang umum digunakan beserta rumusnya dan contoh penyelesaiannya.</p>
+<section id="rotasi">
+<h1>1. Rotasi<a class="headerlink" href="#rotasi" title="Link to this heading">#</a></h1>
+<p>Rotasi adalah transformasi yang memutar objek sekitar titik tertentu. Untuk rotasi dua dimensi, kita menggunakan matriks rotasi berikut:</p>
+<p>[
+\begin{bmatrix}
+\cos(\theta) &amp; -\sin(\theta) \
+\sin(\theta) &amp; \cos(\theta)
+\end{bmatrix}
+]</p>
+<p>di mana (\theta) adalah sudut rotasi dalam radian.</p>
+<p><strong>Contoh Penyelesaian</strong>:
+Misalkan kita ingin memutar sebuah titik (P(1, 1)) sebesar 45 derajat berlawanan arah jarum jam.</p>
+<ol class="arabic simple">
+<li><p>Hitung nilai (\cos(45^\circ)) dan (\sin(45^\circ)):
+[
+\cos(45^\circ) = \frac{\sqrt{2}}{2}, \quad \sin(45^\circ) = \frac{\sqrt{2}}{2}
+]</p></li>
+<li><p>Substitusikan nilai-nilai tersebut ke dalam matriks rotasi:
+[
+\begin{bmatrix}
+\frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2} \
+\frac{\sqrt{2}}{2} &amp; \frac{\sqrt{2}}{2}
+\end{bmatrix}
+]</p></li>
+</ol>
+</section>
+<section id="penskalaan">
+<h1>2. Penskalaan<a class="headerlink" href="#penskalaan" title="Link to this heading">#</a></h1>
+<p>Penskalaan adalah transformasi yang mengubah ukuran objek. Untuk penskalaan dua dimensi, kita menggunakan matriks penskalaan berikut:</p>
+<p>[
+\begin{bmatrix}
+s_x &amp; 0 \
+0 &amp; s_y
+\end{bmatrix}
+]</p>
+<p>di mana (s_x) adalah faktor penskalaan pada sumbu x dan (s_y) adalah faktor penskalaan pada sumbu y.</p>
+<p><strong>Contoh Penyelesaian</strong>:
+Misalkan kita ingin memperbesar sebuah segitiga dengan faktor skala 2 pada sumbu x dan 3 pada sumbu y.</p>
+<ol class="arabic simple">
+<li><p>Buat matriks penskalaan:
+[
+\begin{bmatrix}
+2 &amp; 0 \
+0 &amp; 3
+\end{bmatrix}
+]</p></li>
+</ol>
+</section>
+<section id="translasi">
+<h1>3. Translasi<a class="headerlink" href="#translasi" title="Link to this heading">#</a></h1>
+<p>Translasi adalah transformasi yang memindahkan objek. Untuk translasi dua dimensi, kita menggunakan matriks translasi berikut:</p>
+<p>[
+\begin{bmatrix}
+1 &amp; 0 &amp; t_x \
+0 &amp; 1 &amp; t_y \
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+]</p>
+<p>di mana (t_x) adalah jumlah pergeseran pada sumbu x dan (t_y) adalah jumlah pergeseran pada sumbu y.</p>
+<p><strong>Contoh Penyelesaian</strong>:
+Misalkan kita ingin memindahkan sebuah kotak sejajar sumbu x sebesar 3 satuan dan sejajar sumbu y sebesar -2 satuan.</p>
+<ol class="arabic simple">
+<li><p>Buat matriks translasi:
+[
+\begin{bmatrix}
+1 &amp; 0 &amp; 3 \
+0 &amp; 1 &amp; -2 \
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+]</p></li>
+</ol>
+</section>
+<section id="refleksi">
+<h1>4. Refleksi<a class="headerlink" href="#refleksi" title="Link to this heading">#</a></h1>
+<p>Refleksi adalah transformasi yang mencerminkan objek terhadap sebuah garis. Untuk refleksi dua dimensi, kita menggunakan matriks refleksi berikut:</p>
+<ul class="simple">
+<li><p>Refleksi terhadap sumbu x:
+[
+\begin{bmatrix}
+1 &amp; 0 \
+0 &amp; -1
+\end{bmatrix}
+]</p></li>
+<li><p>Refleksi terhadap sumbu y:
+[
+\begin{bmatrix}
+-1 &amp; 0 \
+0 &amp; 1
+\end{bmatrix}
+]</p></li>
+</ul>
+<p><strong>Contoh Penyelesaian</strong>:
+Misalkan kita ingin merefleksikan sebuah lingkaran terhadap sumbu x.</p>
+<ol class="arabic simple">
+<li><p>Buat matriks refleksi:
+[
+\begin{bmatrix}
+1 &amp; 0 \
+0 &amp; -1
+\end{bmatrix}
+]</p></li>
+</ol>
+<p>Ini adalah beberapa contoh jenis matriks transformasi berserta rumus dan penyelesaiannya. Matriks-matriks ini membantu untuk mentransformasikan objek dalam ruang dua dimensi.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="konsep-rotasi-pada-matriks-transformasi">
+<h1>Konsep Rotasi pada Matriks Transformasi<a class="headerlink" href="#konsep-rotasi-pada-matriks-transformasi" title="Link to this heading">#</a></h1>
+<p>Rotasi adalah transformasi yang mengubah posisi suatu objek dengan memutarnya sekitar titik tertentu, biasanya titik asal (0, 0) dalam sistem koordinat. Rotasi dua dimensi dapat direpresentasikan menggunakan matriks rotasi.</p>
+<section id="matriks-rotasi">
+<h2>Matriks Rotasi<a class="headerlink" href="#matriks-rotasi" title="Link to this heading">#</a></h2>
+<p>Untuk rotasi dengan sudut (\theta) berlawanan arah jarum jam, matriks rotasi yang digunakan adalah:</p>
+<p>[
+R(\theta) = \begin{bmatrix}
+\cos(\theta) &amp; -\sin(\theta) \
+\sin(\theta) &amp; \cos(\theta)
+\end{bmatrix}
+]</p>
+</section>
+<section id="penjelasan-elemen-matriks">
+<h2>Penjelasan Elemen Matriks<a class="headerlink" href="#penjelasan-elemen-matriks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>(\cos(\theta)) dan (\sin(\theta)) adalah fungsi trigonometri yang menentukan perubahan posisi titik setelah rotasi.</p></li>
+<li><p>Elemen (-\sin(\theta)) dan (\cos(\theta)) mengatur orientasi titik dalam rotasi dua dimensi.</p></li>
+</ul>
+</section>
+<section id="cara-kerja-rotasi">
+<h2>Cara Kerja Rotasi<a class="headerlink" href="#cara-kerja-rotasi" title="Link to this heading">#</a></h2>
+<p>Misalkan kita memiliki titik (P(x, y)) dan ingin memutar titik tersebut sebesar sudut (\theta) berlawanan arah jarum jam. Koordinat baru (P’(x’, y’)) setelah rotasi adalah hasil perkalian antara matriks rotasi (R(\theta)) dengan vektor koordinat awal (\begin{bmatrix} x \ y \end{bmatrix}):</p>
+<p>[
+\begin{bmatrix}
+x’ \
+y’
+\end{bmatrix} = \begin{bmatrix}
+\cos(\theta) &amp; -\sin(\theta) \
+\sin(\theta) &amp; \cos(\theta)
+\end{bmatrix} \begin{bmatrix}
+x \
+y
+\end{bmatrix}
+]</p>
+</section>
+<section id="contoh-penerapan">
+<h2>Contoh Penerapan<a class="headerlink" href="#contoh-penerapan" title="Link to this heading">#</a></h2>
+<p>Misalkan kita ingin memutar titik (P(1, 0)) sebesar 90 derajat berlawanan arah jarum jam.</p>
+<ol class="arabic simple">
+<li><p>Sudut rotasi: (\theta = 90^\circ) atau (\theta = \frac{\pi}{2}) radian.</p></li>
+<li><p>Matriks rotasi untuk 90 derajat:
+[
+R\left(\frac{\pi}{2}\right) = \begin{bmatrix}
+\cos\left(\frac{\pi}{2}\right) &amp; -\sin\left(\frac{\pi}{2}\right) \
+\sin\left(\frac{\pi}{2}\right) &amp; \cos\left(\frac{\pi}{2}\right)
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; -1 \
+1 &amp; 0
+\end{bmatrix}
+]</p></li>
+<li><p>Koordinat baru setelah rotasi:
+[
+\begin{bmatrix}
+x’ \
+y’
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; -1 \
+1 &amp; 0
+\end{bmatrix} \begin{bmatrix}
+1 \
+0
+\end{bmatrix} = \begin{bmatrix}
+0 \cdot 1 + (-1) \cdot 0 \
+1 \cdot 1 + 0 \cdot 0
+\end{bmatrix} = \begin{bmatrix}
+0 \
+1
+\end{bmatrix}
+]</p></li>
+</ol>
+<p>Jadi, titik (P(1, 0)) setelah diputar 90 derajat menjadi titik (P’(0, 1)).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Contoh Kode</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">original_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Titik-titik koordinat yang akan ditransformasikan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Sudut rotasi dalam radian</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>  <span class="c1"># 45 derajat</span>
+
+<span class="c1"># Matriks rotasi</span>
+<span class="n">rotation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                            <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+
+<span class="c1"># Transformasi Rotasi</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rotation_matrix</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Rotation 45°&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d065c78dda11bd4d1c24500a5bfe3765fc219e1de7ea0ba38d3ca7f1707bbcb4.png" src="_images/d065c78dda11bd4d1c24500a5bfe3765fc219e1de7ea0ba38d3ca7f1707bbcb4.png" />
+</div>
+</div>
+</section>
+<section id="penjelasan-langkah-langkah-kode">
+<h2>Penjelasan Langkah-langkah Kode<a class="headerlink" href="#penjelasan-langkah-langkah-kode" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Import dan Definisi Fungsi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>apply_transformation(matrix, transformation_matrix) melakukan perkalian matriks antara matriks titik-titik dan matriks transformasi.</p></li>
+<li><p>plot_transformation(original_points, transformed_points, title) memplot titik-titik asli dan titik-titik setelah transformasi.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Titik-titik Koordinat:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Titik-titik koordinat yang akan ditransformasikan didefinisikan sebagai points.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Sudut Rotasi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Sudut rotasi didefinisikan dalam radian.
+𝜋
+/
+4
+π/4 radian setara dengan 45 derajat.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Matriks Rotasi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Matriks rotasi rotation_matrix didefinisikan menggunakan fungsi trigonometri numpy np.cos dan np.sin untuk sudut
+𝜃
+θ.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Penerapan Transformasi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Transformasi rotasi diterapkan pada titik-titik koordinat menggunakan apply_transformation.</p></li>
+<li><p>Hasil transformasi diplot menggunakan plot_transformation.</p></li>
+</ul>
+<p>Contoh Hasil Transformasi</p>
+<p>Misalnya, titik (1, 1) setelah rotasi 45 derajat akan dipindahkan ke posisi baru yang dihitung menggunakan matriks rotasi. Plot hasilnya akan menunjukkan titik-titik asli (berwarna biru) dan titik-titik setelah rotasi (berwarna merah). Titik-titik hasil rotasi akan berada di posisi yang diputar sebesar 45 derajat dari posisi aslinya di sekitar titik asal (0,0).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="konsep-penskalaan-pada-matriks-transformasi">
+<h1>Konsep Penskalaan pada Matriks Transformasi<a class="headerlink" href="#konsep-penskalaan-pada-matriks-transformasi" title="Link to this heading">#</a></h1>
+<p>Penskalaan (scaling) adalah transformasi yang mengubah ukuran suatu objek dalam suatu ruang tanpa mengubah bentuknya. Penskalaan dilakukan dengan memperbesar atau memperkecil koordinat titik-titik dari objek tersebut.</p>
+<section id="matriks-penskalaan">
+<h2>Matriks Penskalaan<a class="headerlink" href="#matriks-penskalaan" title="Link to this heading">#</a></h2>
+<p>Matriks penskalaan dua dimensi memiliki bentuk sebagai berikut:</p>
+<p>[
+S = \begin{bmatrix}
+s_x &amp; 0 \
+0 &amp; s_y
+\end{bmatrix}
+]</p>
+<ul class="simple">
+<li><p>(s_x) adalah faktor skala dalam arah sumbu x.</p></li>
+<li><p>(s_y) adalah faktor skala dalam arah sumbu y.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Penjelasan Elemen Matriks<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Elemen (s_x) memperbesar atau memperkecil koordinat x dari titik-titik objek.</p></li>
+<li><p>Elemen (s_y) memperbesar atau memperkecil koordinat y dari titik-titik objek.</p></li>
+</ul>
+</section>
+<section id="cara-kerja-penskalaan">
+<h2>Cara Kerja Penskalaan<a class="headerlink" href="#cara-kerja-penskalaan" title="Link to this heading">#</a></h2>
+<p>Misalkan kita memiliki titik (P(x, y)) dan ingin menskalakannya dengan faktor (s_x) untuk sumbu x dan (s_y) untuk sumbu y. Koordinat baru (P’(x’, y’)) setelah penskalaan adalah hasil perkalian antara matriks penskalaan (S) dengan vektor koordinat awal (\begin{bmatrix} x \ y \end{bmatrix}):</p>
+<p>[
+\begin{bmatrix}
+x’ \
+y’
+\end{bmatrix} = \begin{bmatrix}
+s_x &amp; 0 \
+0 &amp; s_y
+\end{bmatrix} \begin{bmatrix}
+x \
+y
+\end{bmatrix} = \begin{bmatrix}
+s_x \cdot x \
+s_y \cdot y
+\end{bmatrix}
+]</p>
+</section>
+<section id="id2">
+<h2>Contoh Penerapan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Misalkan kita ingin menskalakan titik (P(1, 2)) dengan faktor skala 2 untuk sumbu x dan faktor skala 3 untuk sumbu y.</p>
+<ol class="arabic simple">
+<li><p>Faktor skala: (s_x = 2), (s_y = 3).</p></li>
+<li><p>Matriks penskalaan:
+[
+S = \begin{bmatrix}
+2 &amp; 0 \
+0 &amp; 3
+\end{bmatrix}
+]</p></li>
+<li><p>Koordinat baru setelah penskalaan:
+[
+\begin{bmatrix}
+x’ \
+y’
+\end{bmatrix} = \begin{bmatrix}
+2 &amp; 0 \
+0 &amp; 3
+\end{bmatrix} \begin{bmatrix}
+1 \
+2
+\end{bmatrix} = \begin{bmatrix}
+2 \cdot 1 \
+3 \cdot 2
+\end{bmatrix} = \begin{bmatrix}
+2 \
+6
+\end{bmatrix}
+]</p></li>
+</ol>
+<p>Jadi, titik (P(1, 2)) setelah penskalaan menjadi titik (P’(2, 6)).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contoh Kode</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">original_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Titik-titik koordinat yang akan ditransformasikan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Matriks penskalaan</span>
+<span class="n">scaling_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi Penskalaan</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">scaling_matrix</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Scaling 2x in X direction&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ec15759d8967181a5de19be145e98190bddf458cb31b8167c24f318f3d352681.png" src="_images/ec15759d8967181a5de19be145e98190bddf458cb31b8167c24f318f3d352681.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Penjelasan Langkah-langkah Kode<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Import dan Definisi Fungsi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>apply_transformation(matrix, transformation_matrix) melakukan perkalian matriks antara matriks titik-titik dan matriks transformasi.</p></li>
+<li><p>plot_transformation(original_points, transformed_points, title) memplot titik-titik asli dan titik-titik setelah transformasi.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Titik-titik Koordinat:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Titik-titik koordinat yang akan ditransformasikan didefinisikan sebagai points.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Matriks Penskalaan:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Matriks penskalaan scaling_matrix didefinisikan dengan faktor skala 2 pada sumbu x dan 1 pada sumbu y. Ini berarti titik-titik pada sumbu x akan diperbesar dua kali lipat, sedangkan titik-titik pada sumbu y tidak akan berubah.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Penerapan Transformasi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Transformasi penskalaan diterapkan pada titik-titik koordinat menggunakan apply_transformation.</p></li>
+<li><p>Hasil transformasi diplot menggunakan plot_transformation.</p></li>
+</ul>
+<p>Contoh Hasil Transformasi</p>
+<p>Misalnya, titik (1, 1) setelah penskalaan dengan faktor (2, 1) akan menjadi (2, 1), titik (2, -1) akan menjadi (4, -1), dan seterusnya. Plot hasilnya akan menunjukkan titik-titik asli (berwarna biru) dan titik-titik setelah penskalaan (berwarna merah). Titik-titik hasil penskalaan akan lebih jauh dari sumbu y dibandingkan titik-titik asli karena diperbesar dua kali lipat di arah x.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="konsep-translasi-pada-matriks-transformasi">
+<h1>Konsep Translasi pada Matriks Transformasi<a class="headerlink" href="#konsep-translasi-pada-matriks-transformasi" title="Link to this heading">#</a></h1>
+<p>Translasi adalah salah satu jenis transformasi geometri yang memindahkan setiap titik dari suatu objek dengan jarak yang sama dalam arah yang sama. Ini berarti bahwa setiap titik pada objek akan berpindah ke lokasi baru, tetapi objek itu sendiri tidak akan berubah bentuk atau ukurannya.</p>
+<section id="matriks-translasi">
+<h2>Matriks Translasi<a class="headerlink" href="#matriks-translasi" title="Link to this heading">#</a></h2>
+<p>Berbeda dengan transformasi linear seperti rotasi, penskalaan, dan refleksi, translasi tidak bisa diwakili langsung oleh matriks (2 \times 2). Sebaliknya, kita menggunakan representasi matriks homogen (3 \times 3) untuk melakukan translasi.</p>
+<p>Matriks translasi dalam bentuk homogen dua dimensi adalah sebagai berikut:</p>
+<p>[
+T = \begin{bmatrix}
+1 &amp; 0 &amp; t_x \
+0 &amp; 1 &amp; t_y \
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+]</p>
+<ul class="simple">
+<li><p>(t_x) adalah jarak translasi dalam arah sumbu x.</p></li>
+<li><p>(t_y) adalah jarak translasi dalam arah sumbu y.</p></li>
+</ul>
+</section>
+<section id="cara-kerja-translasi">
+<h2>Cara Kerja Translasi<a class="headerlink" href="#cara-kerja-translasi" title="Link to this heading">#</a></h2>
+<p>Untuk menerapkan translasi pada titik (P(x, y)), kita perlu menggunakan koordinat homogen dengan menambahkan komponen (1) sebagai komponen ketiga, sehingga vektor titik menjadi (\begin{bmatrix} x \ y \ 1 \end{bmatrix}).</p>
+<p>Koordinat baru (P’(x’, y’)) setelah translasi diberikan oleh:</p>
+<p>[
+\begin{bmatrix}
+x’ \
+y’ \
+1
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 &amp; t_x \
+0 &amp; 1 &amp; t_y \
+0 &amp; 0 &amp; 1
+\end{bmatrix} \begin{bmatrix}
+x \
+y \
+1
+\end{bmatrix} = \begin{bmatrix}
+x + t_x \
+y + t_y \
+1
+\end{bmatrix}
+]</p>
+</section>
+<section id="id4">
+<h2>Contoh Penerapan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Misalkan kita ingin mentranslasi titik (P(1, 2)) dengan jarak translasi (t_x = 3) dan (t_y = 4).</p>
+<ol class="arabic simple">
+<li><p>Matriks translasi:
+[
+T = \begin{bmatrix}
+1 &amp; 0 &amp; 3 \
+0 &amp; 1 &amp; 4 \
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+]</p></li>
+<li><p>Koordinat homogen dari titik (P):
+[
+\begin{bmatrix}
+1 \
+2 \
+1
+\end{bmatrix}
+]</p></li>
+<li><p>Koordinat baru setelah translasi:
+[
+\begin{bmatrix}
+x’ \
+y’ \
+1
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 &amp; 3 \
+0 &amp; 1 &amp; 4 \
+0 &amp; 0 &amp; 1
+\end{bmatrix} \begin{bmatrix}
+1 \
+2 \
+1
+\end{bmatrix} = \begin{bmatrix}
+1 + 3 \
+2 + 4 \
+1
+\end{bmatrix} = \begin{bmatrix}
+4 \
+6 \
+1
+\end{bmatrix}
+]</p></li>
+</ol>
+<p>Jadi, titik (P(1, 2)) setelah translasi menjadi titik (P’(4, 6)).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Contoh Code</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation_homogeneous</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="n">ones_row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">homogeneous_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ones_row</span><span class="p">])</span>
+    <span class="n">transformed_homogeneous_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">homogeneous_matrix</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">transformed_homogeneous_matrix</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">original_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Titik-titik koordinat yang akan ditransformasikan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Matriks translasi</span>
+<span class="n">translation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi Translasi</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation_homogeneous</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">translation_matrix</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Translation by (3, 4)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c8d0214168c32871f2749b37f55db5b702160db980558840866cfb29720c863d.png" src="_images/c8d0214168c32871f2749b37f55db5b702160db980558840866cfb29720c863d.png" />
+</div>
+</div>
+<p>##Penjelasan Langkah-langkah Kode</p>
+<ol class="arabic simple">
+<li><p>Import dan Definisi Fungsi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>apply_transformation_homogeneous(matrix, transformation_matrix) menambahkan baris 1 ke matriks titik untuk membuatnya menjadi koordinat homogen, menerapkan matriks transformasi homogen, dan kemudian menghapus baris homogen untuk kembali ke koordinat kartesian.</p></li>
+<li><p>plot_transformation(original_points, transformed_points, title) memplot titik-titik asli dan hasil transformasi.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Titik-titik Koordinat:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Titik-titik koordinat yang akan ditransformasikan didefinisikan sebagai points.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Matriks Translasi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Matriks translasi translation_matrix didefinisikan untuk menggeser titik-titik sebesar (3, 4).</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Penerapan Transformasi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Transformasi translasi diterapkan pada titik-titik koordinat menggunakan apply_transformation_homogeneous.
+Hasil transformasi diplot menggunakan plot_transformation.</p></li>
+</ul>
+<p>Contoh Hasil Transformasi</p>
+<p>Misalnya, titik (1, 1) setelah ditranslasi dengan vektor (3, 4) akan menjadi (4, 5), dan seterusnya untuk titik-titik lainnya. Plot hasilnya akan menunjukkan titik-titik asli dan titik-titik setelah ditranslasi, dengan titik-titik baru digeser sesuai dengan vektor translasi yang diberikan.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="konsep-reflection-refleksi-pada-matriks-transformasi">
+<h1>Konsep Reflection (Refleksi) pada Matriks Transformasi<a class="headerlink" href="#konsep-reflection-refleksi-pada-matriks-transformasi" title="Link to this heading">#</a></h1>
+<p>Refleksi adalah salah satu jenis transformasi geometri yang mencerminkan setiap titik dari suatu objek melalui suatu garis (dalam dua dimensi) atau bidang (dalam tiga dimensi). Refleksi mengubah orientasi objek tetapi mempertahankan bentuk dan ukurannya.</p>
+<section id="matriks-refleksi-dalam-dua-dimensi">
+<h2>Matriks Refleksi dalam Dua Dimensi<a class="headerlink" href="#matriks-refleksi-dalam-dua-dimensi" title="Link to this heading">#</a></h2>
+<p>Refleksi dapat diwakili oleh matriks transformasi (2 \times 2) atau matriks homogen (3 \times 3). Berikut adalah beberapa contoh matriks refleksi dalam dua dimensi:</p>
+<ol class="arabic simple">
+<li><p><strong>Refleksi terhadap sumbu x:</strong>
+[
+R_x = \begin{bmatrix}
+1 &amp; 0 \
+0 &amp; -1
+\end{bmatrix}
+]
+Matriks ini mencerminkan titik di sekitar sumbu x.</p></li>
+<li><p><strong>Refleksi terhadap sumbu y:</strong>
+[
+R_y = \begin{bmatrix}
+-1 &amp; 0 \
+0 &amp; 1
+\end{bmatrix}
+]
+Matriks ini mencerminkan titik di sekitar sumbu y.</p></li>
+<li><p><strong>Refleksi terhadap garis y = x:</strong>
+[
+R_{y=x} = \begin{bmatrix}
+0 &amp; 1 \
+1 &amp; 0
+\end{bmatrix}
+]
+Matriks ini mencerminkan titik di sekitar garis (y = x).</p></li>
+<li><p><strong>Refleksi terhadap garis y = -x:</strong>
+[
+R_{y=-x} = \begin{bmatrix}
+0 &amp; -1 \
+-1 &amp; 0
+\end{bmatrix}
+]
+Matriks ini mencerminkan titik di sekitar garis (y = -x).</p></li>
+</ol>
+</section>
+<section id="cara-kerja-refleksi">
+<h2>Cara Kerja Refleksi<a class="headerlink" href="#cara-kerja-refleksi" title="Link to this heading">#</a></h2>
+<p>Untuk menerapkan refleksi pada titik (P(x, y)), kita mengalikan vektor koordinat titik dengan matriks refleksi yang sesuai. Koordinat baru (P’(x’, y’)) setelah refleksi diberikan oleh:</p>
+<p>[
+\begin{bmatrix}
+x’ \
+y’
+\end{bmatrix} = R \begin{bmatrix}
+x \
+y
+\end{bmatrix}
+]</p>
+</section>
+<section id="id5">
+<h2>Contoh Penerapan<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Misalkan kita ingin mencerminkan titik (P(3, 4)) terhadap sumbu x.</p>
+<ol class="arabic simple">
+<li><p>Matriks refleksi terhadap sumbu x:
+[
+R_x = \begin{bmatrix}
+1 &amp; 0 \
+0 &amp; -1
+\end{bmatrix}
+]</p></li>
+<li><p>Koordinat titik (P):
+[
+\begin{bmatrix}
+3 \
+4
+\end{bmatrix}
+]</p></li>
+<li><p>Koordinat baru setelah refleksi:
+[
+\begin{bmatrix}
+x’ \
+y’
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 \
+0 &amp; -1
+\end{bmatrix} \begin{bmatrix}
+3 \
+4
+\end{bmatrix} = \begin{bmatrix}
+3 \
+-4
+\end{bmatrix}
+]</p></li>
+</ol>
+<p>Jadi, titik (P(3, 4)) setelah refleksi terhadap sumbu x menjadi titik (P’(3, -4)).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Contoh Code</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">original_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Titik-titik koordinat yang akan ditransformasikan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Matriks refleksi terhadap sumbu x</span>
+<span class="n">reflection_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Matriks refleksi terhadap sumbu y</span>
+<span class="n">reflection_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Matriks refleksi terhadap garis y = x</span>
+<span class="n">reflection_y_eq_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Matriks refleksi terhadap garis y = -x</span>
+<span class="n">reflection_y_eq_neg_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                                  <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi Refleksi terhadap sumbu x</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">reflection_x</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Reflection over X-axis&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transformasi Refleksi terhadap sumbu y</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">reflection_y</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Reflection over Y-axis&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transformasi Refleksi terhadap garis y = x</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">reflection_y_eq_x</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Reflection over Y=X&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transformasi Refleksi terhadap garis y = -x</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">reflection_y_eq_neg_x</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Reflection over Y=-X&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8b2a05598d40383840bf8b45fed5f3bbae781597ac26793e0064a40ece442d41.png" src="_images/8b2a05598d40383840bf8b45fed5f3bbae781597ac26793e0064a40ece442d41.png" />
+<img alt="_images/ee39ca5240200c28f6d985d8ab7ef61c19c9ad299d2bf0cfa661d8e3f7aa9a61.png" src="_images/ee39ca5240200c28f6d985d8ab7ef61c19c9ad299d2bf0cfa661d8e3f7aa9a61.png" />
+<img alt="_images/3bbc2fc3225e6e0e8ce1845c8a6539822828105f4a788813f5f431d767d5f265.png" src="_images/3bbc2fc3225e6e0e8ce1845c8a6539822828105f4a788813f5f431d767d5f265.png" />
+<img alt="_images/340fd16eb0af2b7c26d050a7b5490f7922c78e38357718344ec79f7b1865958a.png" src="_images/340fd16eb0af2b7c26d050a7b5490f7922c78e38357718344ec79f7b1865958a.png" />
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Penjelasan Langkah-langkah Kode<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>###Import dan Definisi Fungsi:</p>
+<ol class="arabic simple">
+<li><p>apply_transformation(matrix, transformation_matrix) menerapkan transformasi pada matriks titik dengan mengalikan matriks transformasi.
+plot_transformation(original_points, transformed_points, title) memplot titik-titik asli dan hasil transformasi.
+Titik-titik Koordinat:</p></li>
+<li><p>Titik-titik koordinat yang akan ditransformasikan didefinisikan sebagai points.</p></li>
+<li><p>Matriks Refleksi:
+Matriks refleksi untuk sumbu x (reflection_x), sumbu y (reflection_y), garis y = x (reflection_y_eq_x), dan garis y = -x (reflection_y_eq_neg_x) didefinisikan.
+Penerapan Transformasi:</p></li>
+<li><p>Setiap matriks refleksi diterapkan pada titik-titik koordinat menggunakan apply_transformation. Hasil transformasi diplot menggunakan plot_transformation.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">horizontal_reflection</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vertical_reflection</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">diagonal_reflection</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="c1"># Contoh penggunaan</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original Matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Horizontal Reflection:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">horizontal_reflection</span><span class="p">(</span><span class="n">matrix</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Vertical Reflection:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vertical_reflection</span><span class="p">(</span><span class="n">matrix</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Diagonal Reflection:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diagonal_reflection</span><span class="p">(</span><span class="n">matrix</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original Matrix:
+[[1 2]
+ [4 5]]
+
+Horizontal Reflection:
+[[4 5]
+ [1 2]]
+
+Vertical Reflection:
+[[2 1]
+ [5 4]]
+
+Diagonal Reflection:
+[[1 4]
+ [2 5]]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">horizontal_reflection</span></code></strong>: Fungsi ini melakukan refleksi horizontal terhadap matriks yang diberikan. Untuk mencapai itu, fungsi menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">np.flipud()</span></code>, yang membalikkan urutan baris matriks, menghasilkan efek refleksi horizontal.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">vertical_reflection</span></code></strong>: Fungsi ini melakukan refleksi vertikal terhadap matriks yang diberikan. Ini dilakukan dengan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">np.fliplr()</span></code>, yang membalikkan urutan kolom matriks, menghasilkan efek refleksi vertikal.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">diagonal_reflection</span></code></strong>: Fungsi ini melakukan refleksi diagonal terhadap matriks yang diberikan. Untuk mencapai ini, fungsi menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">np.transpose()</span></code>, yang menukar baris dengan kolom dalam matriks, menghasilkan efek refleksi diagonal.</p></li>
+</ol>
+<p>Setiap fungsi mengembalikan matriks yang telah diubah sesuai dengan transformasi yang dilakukan.</p>
+<p>Contoh penggunaan dari ketiga fungsi tersebut diberikan di bagian akhir kode. Matriks awal dicetak, diikuti oleh hasil transformasi matriks tersebut dengan menggunakan masing-masing fungsi refleksi. Ini memungkinkan Anda untuk melihat perbedaan antara matriks awal dan matriks setelah setiap jenis refleksi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="c1"># Matriks transformasi</span>
+<span class="n">rot_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">rot_45</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">rot_neg_45</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">rot_90</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">rot_180</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">ref_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">ref_45</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">ref_90</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">ref_neg_45</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Contoh matriks yang akan ditransformasikan</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original Matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rotation 0°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">rot_0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rotation ±45°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">rot_45</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rotation 90°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">rot_90</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rotation 180°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">rot_180</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reflection 0°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ref_0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reflection 45°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ref_45</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reflection 90°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ref_90</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reflection -45°:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">ref_neg_45</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original Matrix:
+[[1 2]
+ [3 4]]
+
+Rotation 0°:
+[[1 2]
+ [3 4]]
+
+Rotation ±45°:
+[[-1.41421356 -1.41421356]
+ [ 2.82842712  4.24264069]]
+
+Rotation 90°:
+[[-3 -4]
+ [ 1  2]]
+
+Rotation 180°:
+[[-1 -2]
+ [-3 -4]]
+
+Reflection 0°:
+[[ 1  2]
+ [-3 -4]]
+
+Reflection 45°:
+[[3 4]
+ [1 2]]
+
+Reflection 90°:
+[[-1 -2]
+ [ 3  4]]
+
+Reflection -45°:
+[[-3 -4]
+ [-1 -2]]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Fungsi <code class="docutils literal notranslate"><span class="pre">apply_transformation</span></code></strong>: Fungsi ini menerima dua parameter, yaitu <code class="docutils literal notranslate"><span class="pre">matrix</span></code> yang merupakan matriks titik koordinat atau matriks yang akan ditransformasikan, dan <code class="docutils literal notranslate"><span class="pre">transformation_matrix</span></code> yang merupakan matriks transformasi. Fungsi tersebut mengembalikan hasil dari perkalian matriks <code class="docutils literal notranslate"><span class="pre">transformation_matrix</span></code> dengan <code class="docutils literal notranslate"><span class="pre">matrix</span></code>, yang mewakili hasil dari menerapkan transformasi ke matriks input.</p></li>
+<li><p><strong>Matriks Transformasi</strong>: Anda mendefinisikan beberapa matriks transformasi, baik untuk rotasi maupun refleksi, seperti <code class="docutils literal notranslate"><span class="pre">rot_0</span></code>, <code class="docutils literal notranslate"><span class="pre">rot_45</span></code>, <code class="docutils literal notranslate"><span class="pre">rot_neg_45</span></code>, <code class="docutils literal notranslate"><span class="pre">rot_90</span></code>, <code class="docutils literal notranslate"><span class="pre">rot_180</span></code>, <code class="docutils literal notranslate"><span class="pre">ref_0</span></code>, <code class="docutils literal notranslate"><span class="pre">ref_45</span></code>, <code class="docutils literal notranslate"><span class="pre">ref_90</span></code>, dan <code class="docutils literal notranslate"><span class="pre">ref_neg_45</span></code>. Setiap matriks ini mewakili jenis transformasi tertentu dengan sudut yang sesuai.</p></li>
+<li><p><strong>Contoh Matriks</strong>: Anda mendefinisikan sebuah matriks contoh, yaitu <code class="docutils literal notranslate"><span class="pre">matrix</span></code>, yang akan digunakan sebagai contoh untuk dikenakan transformasi.</p></li>
+<li><p><strong>Penerapan Transformasi</strong>: Anda menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">apply_transformation</span></code> untuk menerapkan setiap matriks transformasi pada matriks contoh yang telah Anda definisikan sebelumnya. Hasil dari masing-masing transformasi dicetak ke layar menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">originaal_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Matriks transformasi</span>
+<span class="n">rot_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">rot_45</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">rot_neg_45</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">rot_90</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">rot_180</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">ref_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">ref_45</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">ref_90</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">ref_neg_45</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Titik-titik koordinat yang akan ditransformasikan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Plot original points</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="s2">&quot;Original Points&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot transformations</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rot_0</span><span class="p">),</span> <span class="s2">&quot;Rotation 0°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rot_45</span><span class="p">),</span> <span class="s2">&quot;Rotation ±45°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rot_neg_45</span><span class="p">),</span> <span class="s2">&quot;Rotation -45°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rot_90</span><span class="p">),</span> <span class="s2">&quot;Rotation 90°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rot_180</span><span class="p">),</span> <span class="s2">&quot;Rotation 180°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">ref_0</span><span class="p">),</span> <span class="s2">&quot;Reflection 0°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">ref_45</span><span class="p">),</span> <span class="s2">&quot;Reflection 45°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">ref_90</span><span class="p">),</span> <span class="s2">&quot;Reflection 90°&quot;</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">ref_neg_45</span><span class="p">),</span> <span class="s2">&quot;Reflection -45°&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-7-66b59fd0d6d0&gt;</span> in <span class="ni">&lt;cell line: 38&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> 
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="c1"># Plot original points</span>
+<span class="ne">---&gt; </span><span class="mi">38</span> <span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="s2">&quot;Original Points&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> 
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="c1"># Plot transformations</span>
+
+<span class="nn">&lt;ipython-input-7-66b59fd0d6d0&gt;</span> in <span class="ni">plot_transformation</span><span class="nt">(original_points, transformed_points, title)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">originaal_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;originaal_points&#39; is not defined
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Definisi Fungsi <code class="docutils literal notranslate"><span class="pre">apply_transformation</span></code></strong>: Fungsi ini menerima dua parameter, yaitu <code class="docutils literal notranslate"><span class="pre">matrix</span></code> yang merupakan matriks titik koordinat dan <code class="docutils literal notranslate"><span class="pre">transformation_matrix</span></code> yang merupakan matriks transformasi. Fungsi tersebut mengembalikan hasil dari perkalian matriks <code class="docutils literal notranslate"><span class="pre">transformation_matrix</span></code> dengan <code class="docutils literal notranslate"><span class="pre">matrix</span></code>, yang mewakili hasil dari menerapkan transformasi ke setiap titik koordinat.</p></li>
+<li><p><strong>Definisi Fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code></strong>: Fungsi ini digunakan untuk membuat plot dari titik-titik koordinat sebelum dan sesudah transformasi. Fungsi ini memiliki tiga parameter, yaitu <code class="docutils literal notranslate"><span class="pre">original_points</span></code> yang merupakan matriks titik koordinat asli, <code class="docutils literal notranslate"><span class="pre">transformed_points</span></code> yang merupakan matriks titik koordinat setelah transformasi, dan <code class="docutils literal notranslate"><span class="pre">title</span></code> yang merupakan judul plot. Fungsi tersebut membuat plot dari titik-titik asli (<code class="docutils literal notranslate"><span class="pre">original_points</span></code>) dan titik-titik yang telah ditransformasi (<code class="docutils literal notranslate"><span class="pre">transformed_points</span></code>).</p></li>
+<li><p><strong>Matriks Transformasi</strong>: mendefinisikan beberapa matriks transformasi seperti rotasi dan refleksi untuk berbagai sudut (0°, ±45°, 90°, dst).</p></li>
+<li><p><strong>Titik-titik Koordinat</strong>: mendefinisikan kumpulan titik-titik koordinat yang akan ditransformasikan dalam variabel <code class="docutils literal notranslate"><span class="pre">points</span></code>. Ini adalah matriks 2x4 di mana setiap kolom mewakili koordinat x dan y dari sebuah titik.</p></li>
+<li><p><strong>Plot Original Points</strong>: memanggil fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code> untuk membuat plot dari titik-titik koordinat asli tanpa transformasi.</p></li>
+<li><p><strong>Plot Transformations</strong>:  memanggil fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code> untuk setiap transformasi yang telah Anda definisikan sebelumnya. Ini menghasilkan plot dari titik-titik koordinat setelah menerapkan transformasi tersebut.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">transformation_matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">transformation_matrix</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_transformation</span><span class="p">(</span><span class="n">original_points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">original_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;bo-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">transformed_points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transformed&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Titik-titik koordinat yang akan ditransformasikan</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Matriks transformasi</span>
+<span class="n">rotation_45</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)],</span>
+                        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)]])</span>
+
+<span class="n">scaling</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">translation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">reflection_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">shear</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi Rotasi</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">rotation_45</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Rotation 45°&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transformasi Skala</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">scaling</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Scaling&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transformasi Refleksi terhadap sumbu x</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">reflection_x</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Reflection over X-axis&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transformasi Shear Horizontal</span>
+<span class="n">transformed_points</span> <span class="o">=</span> <span class="n">apply_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">shear</span><span class="p">)</span>
+<span class="n">plot_transformation</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">transformed_points</span><span class="p">,</span> <span class="s2">&quot;Shear Horizontal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d065c78dda11bd4d1c24500a5bfe3765fc219e1de7ea0ba38d3ca7f1707bbcb4.png" src="_images/d065c78dda11bd4d1c24500a5bfe3765fc219e1de7ea0ba38d3ca7f1707bbcb4.png" />
+<img alt="_images/865954f58db952e6cff8f5bd3e9cee3d209802b3a892c9f24c37810a1673b703.png" src="_images/865954f58db952e6cff8f5bd3e9cee3d209802b3a892c9f24c37810a1673b703.png" />
+<img alt="_images/8b2a05598d40383840bf8b45fed5f3bbae781597ac26793e0064a40ece442d41.png" src="_images/8b2a05598d40383840bf8b45fed5f3bbae781597ac26793e0064a40ece442d41.png" />
+<img alt="_images/791f3d31a9cb15be8a975164f5c78bf3dbf38161c08f64271b787c73d4cc1f71.png" src="_images/791f3d31a9cb15be8a975164f5c78bf3dbf38161c08f64271b787c73d4cc1f71.png" />
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Rotasi 45°</strong>:
+mendefinisikan matriks rotasi sebesar 45 derajat menggunakan trigonometri untuk menghitung nilai sinus dan kosinus dari sudut rotasi. Kemudian, Anda menerapkan transformasi rotasi ini pada titik-titik koordinat asli. Titik-titik yang telah dirotasi kemudian ditampilkan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code>.</p></li>
+<li><p><strong>Skala</strong>:
+mendefinisikan matriks penskalaan dengan faktor penskalaan 2 pada sumbu x dan faktor penskalaan 1 pada sumbu y. Anda kemudian menerapkan transformasi penskalaan ini pada titik-titik koordinat asli. Titik-titik yang telah diskalakan kemudian ditampilkan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code>.</p></li>
+<li><p><strong>Refleksi terhadap sumbu x</strong>:
+mendefinisikan matriks refleksi terhadap sumbu x, yang hanya mengubah tanda koordinat y tetapi mempertahankan koordinat x. Anda kemudian menerapkan transformasi refleksi ini pada titik-titik koordinat asli. Titik-titik yang telah direfleksikan terhadap sumbu x kemudian ditampilkan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code>.</p></li>
+<li><p><strong>Shear Horizontal</strong>:
+mendefinisikan matriks shear horizontal, yang memindahkan setiap titik sebesar faktor 1 pada sumbu x relatif terhadap sumbu y. Anda kemudian menerapkan transformasi shear ini pada titik-titik koordinat asli. Titik-titik yang telah dishearkan secara horizontal kemudian ditampilkan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">plot_transformation</span></code>.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DeterminanMatrix.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matriks Determinan</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Rotasi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penskalaan">2. Penskalaan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#translasi">3. Translasi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi">4. Refleksi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-rotasi-pada-matriks-transformasi">Konsep Rotasi pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-rotasi">Matriks Rotasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-elemen-matriks">Penjelasan Elemen Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-rotasi">Cara Kerja Rotasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan">Contoh Penerapan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-langkah-langkah-kode">Penjelasan Langkah-langkah Kode</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-penskalaan-pada-matriks-transformasi">Konsep Penskalaan pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-penskalaan">Matriks Penskalaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Penjelasan Elemen Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-penskalaan">Cara Kerja Penskalaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contoh Penerapan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Penjelasan Langkah-langkah Kode</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-translasi-pada-matriks-transformasi">Konsep Translasi pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-translasi">Matriks Translasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-translasi">Cara Kerja Translasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Contoh Penerapan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-reflection-refleksi-pada-matriks-transformasi">Konsep Reflection (Refleksi) pada Matriks Transformasi</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-refleksi-dalam-dua-dimensi">Matriks Refleksi dalam Dua Dimensi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-refleksi">Cara Kerja Refleksi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Contoh Penerapan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Penjelasan Langkah-langkah Kode</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
