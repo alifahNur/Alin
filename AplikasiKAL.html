@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Peringkat Halaman (PageRank): Membongkar Rahasia di Balik Peringkat Website &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'AplikasiKAL';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Rotasi" href="Transformasi_linear.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My sample book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Aljabar Matrix</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="DeterminanMatrix.html">Matriks Determinan</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Transformasi_linear.html">1. Rotasi</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Peringkat Halaman (PageRank): Membongkar Rahasia di Balik Peringkat Website</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAplikasiKAL.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/AplikasiKAL.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Peringkat Halaman (PageRank): Membongkar Rahasia di Balik Peringkat Website</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mari-kita-nyatakan-dengan-a-matriks-transisi-dari-grafik-a-begin-pmatrix-0-0-1-frac-1-2-1-0-0-0-0-0-0-frac-1-2-0-1-1-0-end-pmatrix">Mari kita nyatakan dengan ( A ) matriks transisi dari grafik, ( A = \begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} \ 1 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} \ 0 &amp; 1 &amp; 1 &amp; 0 \end{pmatrix} ).</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudut-pandang-sistem-dinamis">Sudut pandang sistem dinamis:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudut-pandang-aljabar-linier">Sudut pandang aljabar linier:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudut-pandang-probabilistik">Sudut pandang probabilistik:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>#Page Rank</p>
+<section id="peringkat-halaman-pagerank-membongkar-rahasia-di-balik-peringkat-website">
+<h1>Peringkat Halaman (PageRank): Membongkar Rahasia di Balik Peringkat Website<a class="headerlink" href="#peringkat-halaman-pagerank-membongkar-rahasia-di-balik-peringkat-website" title="Link to this heading">#</a></h1>
+<p><strong>Peringkat Halaman</strong>, atau PageRank, adalah sebuah algoritma canggih yang diciptakan oleh Larry Page dan Sergey Brin, untuk menentukan <strong>kualitas dan relevansi</strong> sebuah halaman web. Algoritma ini memainkan peran penting dalam <strong>menentukan peringkat</strong> halaman web di hasil pencarian Google.</p>
+<p><strong>Faktor-faktor yang Mempengaruhi PageRank:</strong></p>
+<ul class="simple">
+<li><p><strong>Jumlah Tautan:</strong> Semakin banyak tautan yang mengarah ke halaman web, semakin tinggi PageRank-nya.</p></li>
+<li><p><strong>Kualitas Tautan:</strong> Tautan dari situs web yang memiliki PageRank tinggi lebih bernilai daripada tautan dari situs web baru atau berkualitas rendah.</p></li>
+<li><p><strong>Posisi Tautan:</strong> Tautan yang ditempatkan di bagian utama halaman web (seperti body content) lebih bernilai daripada tautan di footer atau sidebar.</p></li>
+<li><p><strong>Teks Tautan:</strong> Teks tautan yang deskriptif dan relevan dengan konten halaman web lebih bernilai daripada teks tautan generik.</p></li>
+</ul>
+<section id="mari-kita-nyatakan-dengan-a-matriks-transisi-dari-grafik-a-begin-pmatrix-0-0-1-frac-1-2-1-0-0-0-0-0-0-frac-1-2-0-1-1-0-end-pmatrix">
+<h2>Mari kita nyatakan dengan ( A ) matriks transisi dari grafik, ( A = \begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} \ 1 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} \ 0 &amp; 1 &amp; 1 &amp; 0 \end{pmatrix} ).<a class="headerlink" href="#mari-kita-nyatakan-dengan-a-matriks-transisi-dari-grafik-a-begin-pmatrix-0-0-1-frac-1-2-1-0-0-0-0-0-0-frac-1-2-0-1-1-0-end-pmatrix" title="Link to this heading">#</a></h2>
+</section>
+<section id="sudut-pandang-sistem-dinamis">
+<h2>Sudut pandang sistem dinamis:<a class="headerlink" href="#sudut-pandang-sistem-dinamis" title="Link to this heading">#</a></h2>
+<p>Misalkan pada awalnya tingkat kepentingannya didistribusikan secara merata di antara 4 node, masing-masing mendapatkan \begin{pmatrix} \frac{1}{4} \end{pmatrix}. Dilambangkan dengan ( v ) vektor peringkat awal, yang semua entrinya sama dengan \begin{pmatrix}\frac{1}{4}\end{pmatrix}. Setiap tautan masuk meningkatkan pentingnya laman web, jadi pada langkah 1, kami memperbarui peringkat setiap laman dengan menambahkan nilai saat ini pada pentingnya tautan masuk. Ini sama dengan mengalikan matriks ( A ) dengan ( v ). Pada langkah 1, vektor kepentingan baru adalah ( v_1 = Av ). Kita dapat mengulangi prosesnya, sehingga pada langkah 2, vektor kepentingan yang diperbarui adalah ( v_2 = A(Av) = A^2 v ). Perhitungan numerik memberikan:</p>
+<p>[
+v = \begin{pmatrix} 0.25 \ 0.25 \ 0.25 \ 0.25 \end{pmatrix} Av = \begin{pmatrix} 0.37 \ 0.08 \ 0.33 \ 0.20 \end{pmatrix} A^2 v = \begin{pmatrix} 0.37 \ 0.08 \ 0.33 \ 0.20 \end{pmatrix}
+]</p>
+<p>[
+A^3 v = \begin{pmatrix} 0.35 \ 0.14 \ 0.32 \ 0.19 \end{pmatrix} A^4 v = \begin{pmatrix} 0.39 \ 0.11 \ 0.31 \ 0.19 \end{pmatrix} A^5 v = \begin{pmatrix} 0.39 \ 0.12 \ 0.29 \ 0.19 \end{pmatrix}
+]</p>
+<p>[
+A^6 v = \begin{pmatrix} 0.38 \ 0.12 \ 0.29 \ 0.19 \end{pmatrix} A^7 v = \begin{pmatrix} 0.38 \ 0.12 \ 0.29 \ 0.19 \end{pmatrix} A^8 v = \begin{pmatrix} 0.38 &amp; 0.12 &amp; 0.29 &amp; 0.19 \end{pmatrix}
+]</p>
+<p>Kita perhatikan bahwa barisan iterasi v , Av , …, A^k v cenderung ke nilai kesetimbangan ( v^* = \begin{pmatrix} 0.38 \ 0.12 \ 0.29 \ 0.19 \end{pmatrix} ).</p>
+</section>
+<section id="sudut-pandang-aljabar-linier">
+<h2>Sudut pandang aljabar linier:<a class="headerlink" href="#sudut-pandang-aljabar-linier" title="Link to this heading">#</a></h2>
+<p>Mari kita nyatakan dengan ( x_1, x_2, x_3, dan x_4 ) pentingnya keempat halaman tersebut. Menganalisis situasi di setiap node, kita mendapatkan sistem:</p>
+<p>[
+\begin{cases}
+x_1 = 1 \cdot x_3 + \frac{1}{2} \cdot x_4 \
+x_2 = \frac{1}{3} \cdot x_1 \
+x_3 = \frac{1}{3} \cdot x_1 + \frac{1}{2} \cdot x_4 \
+x_4 = \frac{1}{3} \cdot x_1 + 1 \cdot x_2 + \frac{1}{2} \cdot x_4
+\end{cases}
+]</p>
+<p>Hal ini setara dengan menanyakan solusi persamaan ( A dot \begin{pmatrix} x_1 \ x_2 \ x_3 \ x_4 \end{pmatrix} = \begin{pmatrix} x_1 \ x_2 \ x_3 \ x_4 \end{pmatrix} ). Dari Contoh tersebut kita mengetahui bahwa vektor eigen yang bersesuaian dengan nilai eigen 1 berbentuk ( c cdot \begin{pmatrix} 12 \ 4 \ 9 \ 6 \end{pmatrix} ). Karena PageRank seharusnya hanya mencerminkan kepentingan relatif dari node, dan karena vektor eigen hanyalah kelipatan skalar satu sama lain, kita dapat memilih salah satu dari mereka untuk menjadi vektor pagerank kita. pilih v sebagai vektor eigen unik dengan jumlah semua entri sama dengan 1. (Terkadang kita menyebutnya sebagai vektor eigen probabilistik yang sesuai dengan nilai eigen 1). Vektor eigen \begin{pmatrix}\frac{1}{31} \end{pmatrix}.</p>
+<p>\begin{pmatrix} 12 \ 4 \ 9 \ 6 \end{pmatrix} ~ \begin{pmatrix} 0.38 \ 0.12 \ 0.29 \ 0.19 \end{pmatrix} <br />
+adalah vektor PageRank kita.</p>
+</section>
+<section id="sudut-pandang-probabilistik">
+<h2>Sudut pandang probabilistik:<a class="headerlink" href="#sudut-pandang-probabilistik" title="Link to this heading">#</a></h2>
+<p>Karena pentingnya suatu halaman web diukur dengan popularitasnya (berapa banyak link masuk yang dimilikinya), kita dapat melihat pentingnya halaman ( i ) sebagai probabilitas bahwa seorang peselancar acak di Internet yang membuka browser ke halaman mana pun dan mulai mengikuti hyperlink, mengunjungi halaman ( i ). Kita dapat menafsirkan bobot yang kita tetapkan pada tepi grafik dengan cara yang probabilistik: Seorang peselancar acak yang sedang melihat halaman web 2, memiliki ½ probabilitas untuk membuka halaman 3, dan ½ probabilitas untuk membuka halaman 4. Kita dapat memodelkan prosesnya sebagai jalan acak pada grafik. Setiap halaman mempunyai probabilitas yang sama \begin{pmatrix}\frac{1}{4} \end{pmatrix} untuk dipilih sebagai titik awal. Jadi, distribusi probabilitas awal diberikan oleh vektor kolom (\begin{pmatrix} \frac{1}{4} \ \frac{1}{4} \ \frac{1}{4} \ \frac{1}{4} \end{pmatrix}). Peluang halaman ( i ) dikunjungi setelah satu langkah sama dengan ( A \cdot x ), dan seterusnya. Peluang halaman ( i ) dikunjungi setelah ( k ) langkah sama dengan ( A^k \cdot x ). Barisan ( Ax, A^2 x, A^3 x, …, A^k x, … ) dalam hal ini konvergen menjadi vektor probabilistik unik ( v^* ). Dalam konteks ini ( v^* ) disebut distribusi stasioner dan akan menjadi vektor PageRank kita. Selain itu, entri ke-(i) dalam vektor ( v^* ) hanyalah probabilitas bahwa pada setiap saat seorang peselancar acak mengunjungi halaman ( i ). Perhitungannya identik dengan yang kami lakukan dalam interpretasi sistem dinamik, hanya makna yang kami berikan pada setiap langkah yang sedikit berbeda.</p>
+<p>#CONTOH PENYELESAIAN SOAL YANG ADA DI KELAS</p>
+<p>Untuk menghitung ( V2 ), kita harus melakukan perkalian matriks antara matriks ( A ) dan vektor ( V ). Hasil dari perkalian ini kemudian akan dibulatkan ke angka terdekat.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{Matriks(A)} &amp;= \begin{bmatrix}
+0 &amp; 0 &amp; 1 &amp; \frac{1}{2} \\
+\frac{1}{3} &amp; 0 &amp; 0 &amp; 0 \\
+\frac{1}{3} &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} \\
+\frac{1}{3} &amp; \frac{1}{2} &amp; 0 &amp; 0
+\end{bmatrix}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{Vektor(V):} &amp;=
+\begin{bmatrix}
+0.25 \\
+0.25 \\
+0.25 \\
+0.25
+\end{bmatrix}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\text{perkalian \( V2 = A  V \):}
+\end{align*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{V2} &amp;=
+\begin{bmatrix}
+0 &amp; 0 &amp; 1 &amp; \frac{1}{2} \\
+\frac{1}{3} &amp; 0 &amp; 0 &amp; 0 \\
+\frac{1}{3} &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} \\
+\frac{1}{3} &amp; \frac{1}{2} &amp; 0 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+\times
+\end{bmatrix}
+\begin{bmatrix}
+0.25 \\
+0.25 \\
+0.25 \\
+0.25
+\end{bmatrix}
+\end{align*}
+\end{split}\]</div>
+<p>hasil yang di dapat:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\begin{bmatrix}
+V2[0] = 0 \cdot 0.25 + 0 \cdot 0.25 + 1 \cdot 0.25 + \frac{1}{2} \cdot 0.25 = 0 + 0 + 0.25 + 0.125 = 0.375
+\end{bmatrix}
+\end{align*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\begin{bmatrix}
+V2[1] = \frac{1}{3} \cdot 0.25 + 0 \cdot 0.25 + 0 \cdot 0.25 + 0 \cdot 0.25 = 0.0833
+\end{bmatrix}
+\end{align*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\begin{bmatrix}
+V2[2] = \frac{1}{3} \cdot 0.25 + \frac{1}{2} \cdot 0.25 + 0 \cdot 0.25 + \frac{1}{2} \cdot 0.25 = 0.0833 + 0.125 + 0 + 0.125 = 0.3333
+\end{bmatrix}
+\end{align*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\begin{bmatrix}
+V2[3] = \frac{1}{3} \cdot 0.25 + \frac{1}{2} \cdot 0.25 + 0 \cdot 0.25 + 0 \cdot 0.25 = 0.0833 + 0.125 = 0.2083
+\end{bmatrix}
+\end{align*}
+\]</div>
+<p>Hasil yang sudah dibulatkan :
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+\text{V2}&amp;=
+\begin{bmatrix}
+0.38 \\
+0.08 \\
+0.33 \\
+0.21
+\end{bmatrix}
+\end{align*}
+\)</span>$</p>
+<p>hasil akhir :
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+\begin{bmatrix}
+0.38 \\
+0.08 \\
+0.33 \\
+0.21
+\end{bmatrix}
+\end{align*}
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks A dan vektor V sebagai array NumPy</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.25</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Lakukan perkalian matriks A dengan vektor V</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+
+<span class="c1"># Bulatkan hasil ke dua angka desimal</span>
+<span class="n">V2_rounded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">V2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V2:&quot;</span><span class="p">,</span> <span class="n">V2_rounded</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>V2: [[0.38]
+ [0.08]
+ [0.33]
+ [0.21]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V0:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+
+<span class="c1"># Iterasi hingga V15</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;V</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>V0:
+[[0.25]
+ [0.25]
+ [0.25]
+ [0.25]]
+V1:
+[[0.375     ]
+ [0.08333333]
+ [0.33333333]
+ [0.20833333]] 
+
+V2:
+[[0.4375    ]
+ [0.125     ]
+ [0.27083333]
+ [0.16666667]] 
+
+V3:
+[[0.35416667]
+ [0.14583333]
+ [0.29166667]
+ [0.20833333]] 
+
+V4:
+[[0.39583333]
+ [0.11805556]
+ [0.29513889]
+ [0.19097222]] 
+
+V5:
+[[0.390625  ]
+ [0.13194444]
+ [0.28645833]
+ [0.19097222]] 
+
+V6:
+[[0.38194444]
+ [0.13020833]
+ [0.29166667]
+ [0.19618056]] 
+
+V7:
+[[0.38975694]
+ [0.12731481]
+ [0.29050926]
+ [0.19241898]] 
+
+V8:
+[[0.38671875]
+ [0.12991898]
+ [0.28978588]
+ [0.19357639]] 
+
+V9:
+[[0.38657407]
+ [0.12890625]
+ [0.29065394]
+ [0.19386574]] 
+
+V10:
+[[0.38758681]
+ [0.12885802]
+ [0.29024402]
+ [0.19331115]] 
+
+V11:
+[[0.38689959]
+ [0.1291956 ]
+ [0.29028019]
+ [0.19362461]] 
+
+V12:
+[[0.3870925 ]
+ [0.12896653]
+ [0.29037664]
+ [0.19356433]] 
+
+V13:
+[[0.38715881]
+ [0.12903083]
+ [0.29029626]
+ [0.1935141 ]] 
+
+V14:
+[[0.38705331]
+ [0.12905294]
+ [0.2903254 ]
+ [0.19356835]] 
+
+V15:
+[[0.38710958]
+ [0.12901777]
+ [0.29032841]
+ [0.19354424]] 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Transformasi_linear.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Rotasi</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mari-kita-nyatakan-dengan-a-matriks-transisi-dari-grafik-a-begin-pmatrix-0-0-1-frac-1-2-1-0-0-0-0-0-0-frac-1-2-0-1-1-0-end-pmatrix">Mari kita nyatakan dengan ( A ) matriks transisi dari grafik, ( A = \begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} \ 1 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} \ 0 &amp; 1 &amp; 1 &amp; 0 \end{pmatrix} ).</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudut-pandang-sistem-dinamis">Sudut pandang sistem dinamis:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudut-pandang-aljabar-linier">Sudut pandang aljabar linier:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudut-pandang-probabilistik">Sudut pandang probabilistik:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
